@@ -11,6 +11,9 @@
 		55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC3B29AAAAE8000027FC /* ContentView.swift */; };
 		55CACC3E29AAAAE9000027FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CACC3D29AAAAE9000027FC /* Assets.xcassets */; };
 		55CACC4229AAAAE9000027FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CACC4129AAAAE9000027FC /* Preview Assets.xcassets */; };
+		55CACC4A29AAAF45000027FC /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55CACC4929AAAF45000027FC /* OpenAIKit */; };
+		55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5329ABF4B5000027FC /* OpenAiManager.swift */; };
+		55CACC5729AC3849000027FC /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = 55CACC5629AC3849000027FC /* AsyncHTTPClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,7 @@
 		55CACC3D29AAAAE9000027FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55CACC3F29AAAAE9000027FC /* JuC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JuC.entitlements; sourceTree = "<group>"; };
 		55CACC4129AAAAE9000027FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55CACC5329ABF4B5000027FC /* OpenAiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55CACC5729AC3849000027FC /* AsyncHTTPClient in Frameworks */,
+				55CACC4A29AAAF45000027FC /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +58,7 @@
 		55CACC3829AAAAE8000027FC /* JuC */ = {
 			isa = PBXGroup;
 			children = (
+				55CACC5229ABF49D000027FC /* Managers */,
 				55CACC3929AAAAE8000027FC /* JuCApp.swift */,
 				55CACC3B29AAAAE8000027FC /* ContentView.swift */,
 				55CACC3D29AAAAE9000027FC /* Assets.xcassets */,
@@ -67,6 +74,14 @@
 				55CACC4129AAAAE9000027FC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		55CACC5229ABF49D000027FC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				55CACC5329ABF4B5000027FC /* OpenAiManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +100,10 @@
 			dependencies = (
 			);
 			name = JuC;
+			packageProductDependencies = (
+				55CACC4929AAAF45000027FC /* OpenAIKit */,
+				55CACC5629AC3849000027FC /* AsyncHTTPClient */,
+			);
 			productName = JuC;
 			productReference = 55CACC3629AAAAE8000027FC /* JuC.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +132,10 @@
 				Base,
 			);
 			mainGroup = 55CACC2D29AAAAE8000027FC;
+			packageReferences = (
+				55CACC4829AAAF45000027FC /* XCRemoteSwiftPackageReference "openai-kit" */,
+				55CACC5529AC3849000027FC /* XCRemoteSwiftPackageReference "async-http-client" */,
+			);
 			productRefGroup = 55CACC3729AAAAE8000027FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,6 +164,7 @@
 			files = (
 				55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */,
 				55CACC3A29AAAAE8000027FC /* JuCApp.swift in Sources */,
+				55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +378,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		55CACC4829AAAF45000027FC /* XCRemoteSwiftPackageReference "openai-kit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dylanshine/openai-kit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		55CACC5529AC3849000027FC /* XCRemoteSwiftPackageReference "async-http-client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swift-server/async-http-client.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55CACC4929AAAF45000027FC /* OpenAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55CACC4829AAAF45000027FC /* XCRemoteSwiftPackageReference "openai-kit" */;
+			productName = OpenAIKit;
+		};
+		55CACC5629AC3849000027FC /* AsyncHTTPClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55CACC5529AC3849000027FC /* XCRemoteSwiftPackageReference "async-http-client" */;
+			productName = AsyncHTTPClient;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55CACC2E29AAAAE8000027FC /* Project object */;
 }
