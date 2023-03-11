@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OpenAIKit
 
 struct ChatView: View {
     @EnvironmentObject var viewModel: ChatViewModel
@@ -14,15 +15,35 @@ struct ChatView: View {
     var body: some View {
         VStack {
             ScrollView {
-                VStack(spacing: 10) {
+                VStack(spacing: 20) {
                     ForEach(viewModel.messages, id: \.self) { message in
-                        Text(message)
-                            .foregroundColor(.white)
-                            .padding(8)
-                            .background(Color.blue)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                        if message.role == "user" {
+                            HStack {
+                                Spacer()
+                                Text(message.content)
+                                    .foregroundColor(.white)
+                                    .padding(8)
+                                    .background(Color.blue)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    .padding(.leading, 40)
+                                    .padding(.trailing)
+                            }
+                        } else {
+                            HStack {
+                                Text(message.content)
+                                    .foregroundColor(.white)
+                                    .padding(8)
+                                    .background(Color.blue)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                                    .padding(.trailing, 40)
+                                    .padding(.leading)
+                                Spacer()
+                            }
+                        }
+                        
                     }
                 }
+                .padding(.vertical)
             }
             HStack {
                 TextField("Type a message...", text: $messageText)
@@ -30,7 +51,8 @@ struct ChatView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                 Button(action: {
                     Task{
-                        await viewModel.sendMessage(messageText)
+                        viewModel.messages.append(Chat.Message(role: "user", content: messageText))
+                        await viewModel.sendMessage()
                         messageText = ""
                     }
                 }, label: {
