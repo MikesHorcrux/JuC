@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		554DFA4B29B9641900661D00 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 554DFA4A29B9641900661D00 /* OpenAIKit */; };
+		558D329829C29F7F00075D41 /* view+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329729C29F7F00075D41 /* view+Extention.swift */; };
+		55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */; };
+		55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */; };
+		55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */; };
+		55BD9CC629BEA81900B065C3 /* JuCChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC529BEA81900B065C3 /* JuCChatBubble.swift */; };
+		55BD9CCA29C02A5900B065C3 /* TextEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC929C02A5900B065C3 /* TextEntryView.swift */; };
+		55BD9CCC29C0385000B065C3 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CCB29C0385000B065C3 /* BottomSheet.swift */; };
 		55CACC3A29AAAAE8000027FC /* JuCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC3929AAAAE8000027FC /* JuCApp.swift */; };
 		55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC3B29AAAAE8000027FC /* ContentView.swift */; };
 		55CACC3E29AAAAE9000027FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CACC3D29AAAAE9000027FC /* Assets.xcassets */; };
@@ -19,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		558D329729C29F7F00075D41 /* view+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "view+Extention.swift"; sourceTree = "<group>"; };
+		55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubleShape.swift; sourceTree = "<group>"; };
+		55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatBubble.swift; sourceTree = "<group>"; };
+		55BD9CC529BEA81900B065C3 /* JuCChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuCChatBubble.swift; sourceTree = "<group>"; };
+		55BD9CC929C02A5900B065C3 /* TextEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEntryView.swift; sourceTree = "<group>"; };
+		55BD9CCB29C0385000B065C3 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		55CACC3629AAAAE8000027FC /* JuC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JuC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55CACC3929AAAAE8000027FC /* JuCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuCApp.swift; sourceTree = "<group>"; };
 		55CACC3B29AAAAE8000027FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +57,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		558D329629C29F6900075D41 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				558D329729C29F7F00075D41 /* view+Extention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		55BD9CBA29BEA12400B065C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55BD9CC029BEA63D00B065C3 /* ChatBuble */,
+				55BD9CC929C02A5900B065C3 /* TextEntryView.swift */,
+				55BD9CCB29C0385000B065C3 /* BottomSheet.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		55BD9CBB29BEA12E00B065C3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		55BD9CC029BEA63D00B065C3 /* ChatBuble */ = {
+			isa = PBXGroup;
+			children = (
+				55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */,
+				55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */,
+				55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */,
+				55BD9CC529BEA81900B065C3 /* JuCChatBubble.swift */,
+			);
+			path = ChatBuble;
+			sourceTree = "<group>";
+		};
 		55CACC2D29AAAAE8000027FC = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +112,9 @@
 		55CACC3829AAAAE8000027FC /* JuC */ = {
 			isa = PBXGroup;
 			children = (
+				558D329629C29F6900075D41 /* Extentions */,
+				55BD9CBB29BEA12E00B065C3 /* ViewModels */,
+				55BD9CBA29BEA12400B065C3 /* Views */,
 				55CACC5229ABF49D000027FC /* Managers */,
 				55CACC3929AAAAE8000027FC /* JuCApp.swift */,
 				55CACC3B29AAAAE8000027FC /* ContentView.swift */,
@@ -169,9 +222,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */,
+				55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */,
+				55BD9CCC29C0385000B065C3 /* BottomSheet.swift in Sources */,
+				558D329829C29F7F00075D41 /* view+Extention.swift in Sources */,
+				55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */,
+				55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */,
 				55CACC3A29AAAAE8000027FC /* JuCApp.swift in Sources */,
+				55BD9CC629BEA81900B065C3 /* JuCChatBubble.swift in Sources */,
 				55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */,
 				55CACC5929AC39F2000027FC /* ChatViewModel.swift in Sources */,
+				55BD9CCA29C02A5900B065C3 /* TextEntryView.swift in Sources */,
 				55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

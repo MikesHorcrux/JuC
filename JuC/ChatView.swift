@@ -9,63 +9,69 @@ import SwiftUI
 import OpenAIKit
 
 struct ChatView: View {
-    @EnvironmentObject var viewModel: ChatViewModel
-    @State private var messageText: String = ""
+    @ObservedObject var JuCManager: ChatViewModel
     
     var body: some View {
-        VStack {
+        ZStack(alignment: .bottom) {
             ScrollView {
                 VStack(spacing: 20) {
-                    ForEach(viewModel.messages, id: \.self) { message in
+                    ForEach(JuCManager.messages, id: \.self) { message in
                         if message.role == "user" {
-                            HStack {
-                                Spacer()
-                                Text(message.content)
-                                    .foregroundColor(.white)
-                                    .padding(8)
-                                    .background(Color.blue)
-                                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                                    .padding(.leading, 40)
-                                    .padding(.trailing)
-                            }
+                            UserChatBubble(msg: message.content)
                         } else {
-                            HStack {
-                                Text(message.content)
-                                    .foregroundColor(.white)
-                                    .padding(8)
-                                    .background(Color.blue)
-                                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                                    .padding(.trailing, 40)
-                                    .padding(.leading)
-                                Spacer()
-                            }
+                            JuCChatBubble(msg: message.content)
                         }
                         
                     }
                 }
-                .padding(.vertical)
+                .padding(.top)
+                .padding(.bottom, 155)
             }
-            HStack {
-                TextField("Type a message...", text: $messageText)
-                    .padding(8)
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
-                Button(action: {
-                    Task{
-                        viewModel.messages.append(Chat.Message(role: "user", content: messageText))
-                        await viewModel.sendMessage()
-                        messageText = ""
-                    }
-                }, label: {
-                    Text("Send")
-                })
-            }
-            .padding()
+//            ZStack(alignment: .bottom){
+//                HStack {
+////                    VStack {
+////                        TextEditor(text: $messageText)
+////                            .padding(.horizontal)
+////                            .frame(idealHeight: 5, maxHeight: 150)
+////                            .scrollContentBackground(.hidden)
+////                                                                    .background(.indigo)
+////                            .cornerRadius(15)
+////                            .lineLimit(1...3)
+////                            .multilineTextAlignment(.leading)
+////
+////
+////                    }
+//                    VStack {
+//                                Spacer()
+//                                TextEditor(text: $messageText)
+//                                    .frame(height: 30, alignment: .top)
+//                                    .fixedSize(horizontal: false, vertical: true)
+//                                    .lineLimit(1)
+//                                    .padding(.horizontal)
+//                                    .background(Color.blue.opacity(0.2))
+//                                    .cornerRadius(10)
+//                                Spacer()
+//                            }
+//                    VStack {
+//                        Button(action: {
+//                            Task{
+//                                JuCManager.messages.append(Chat.Message(role: "user", content: messageText))
+//                                await JuCManager.sendMessage()
+//                                messageText = ""
+//                            }
+//                        }, label: {
+//                            Text("Send")
+//                        })
+//                    }
+//                }
+//                .background(Color.primary.opacity(0.2).blur(radius: 10))
+//            }
         }
     }
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView()
+        ChatView(JuCManager: ChatViewModel())
     }
 }
