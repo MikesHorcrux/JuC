@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		554DFA4B29B9641900661D00 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 554DFA4A29B9641900661D00 /* OpenAIKit */; };
 		558D329829C29F7F00075D41 /* view+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329729C29F7F00075D41 /* view+Extention.swift */; };
+		558D329A29C2E1AC00075D41 /* MainChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329929C2E1AC00075D41 /* MainChatView.swift */; };
+		558D329C29C2E23100075D41 /* TopRoundedRectangleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329B29C2E23100075D41 /* TopRoundedRectangleShape.swift */; };
 		55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */; };
 		55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */; };
 		55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */; };
@@ -21,12 +23,14 @@
 		55CACC4229AAAAE9000027FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CACC4129AAAAE9000027FC /* Preview Assets.xcassets */; };
 		55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5329ABF4B5000027FC /* OpenAiManager.swift */; };
 		55CACC5729AC3849000027FC /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = 55CACC5629AC3849000027FC /* AsyncHTTPClient */; };
-		55CACC5929AC39F2000027FC /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5829AC39F2000027FC /* ChatViewModel.swift */; };
+		55CACC5929AC39F2000027FC /* JuCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5829AC39F2000027FC /* JuCManager.swift */; };
 		55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5A29AC3A4F000027FC /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		558D329729C29F7F00075D41 /* view+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "view+Extention.swift"; sourceTree = "<group>"; };
+		558D329929C2E1AC00075D41 /* MainChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainChatView.swift; sourceTree = "<group>"; };
+		558D329B29C2E23100075D41 /* TopRoundedRectangleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundedRectangleShape.swift; sourceTree = "<group>"; };
 		55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubleShape.swift; sourceTree = "<group>"; };
 		55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatBubble.swift; sourceTree = "<group>"; };
@@ -40,7 +44,7 @@
 		55CACC3F29AAAAE9000027FC /* JuC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JuC.entitlements; sourceTree = "<group>"; };
 		55CACC4129AAAAE9000027FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55CACC5329ABF4B5000027FC /* OpenAiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAiManager.swift; sourceTree = "<group>"; };
-		55CACC5829AC39F2000027FC /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		55CACC5829AC39F2000027FC /* JuCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuCManager.swift; sourceTree = "<group>"; };
 		55CACC5A29AC3A4F000027FC /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,9 +72,12 @@
 		55BD9CBA29BEA12400B065C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55CACC5A29AC3A4F000027FC /* ChatView.swift */,
 				55BD9CC029BEA63D00B065C3 /* ChatBuble */,
 				55BD9CC929C02A5900B065C3 /* TextEntryView.swift */,
 				55BD9CCB29C0385000B065C3 /* BottomSheet.swift */,
+				558D329929C2E1AC00075D41 /* MainChatView.swift */,
+				558D329B29C2E23100075D41 /* TopRoundedRectangleShape.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,8 +128,6 @@
 				55CACC3D29AAAAE9000027FC /* Assets.xcassets */,
 				55CACC3F29AAAAE9000027FC /* JuC.entitlements */,
 				55CACC4029AAAAE9000027FC /* Preview Content */,
-				55CACC5829AC39F2000027FC /* ChatViewModel.swift */,
-				55CACC5A29AC3A4F000027FC /* ChatView.swift */,
 			);
 			path = JuC;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 		55CACC5229ABF49D000027FC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				55CACC5829AC39F2000027FC /* JuCManager.swift */,
 				55CACC5329ABF4B5000027FC /* OpenAiManager.swift */,
 			);
 			path = Managers;
@@ -222,15 +228,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */,
+				558D329A29C2E1AC00075D41 /* MainChatView.swift in Sources */,
 				55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */,
 				55BD9CCC29C0385000B065C3 /* BottomSheet.swift in Sources */,
 				558D329829C29F7F00075D41 /* view+Extention.swift in Sources */,
 				55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */,
 				55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */,
+				558D329C29C2E23100075D41 /* TopRoundedRectangleShape.swift in Sources */,
 				55CACC3A29AAAAE8000027FC /* JuCApp.swift in Sources */,
 				55BD9CC629BEA81900B065C3 /* JuCChatBubble.swift in Sources */,
 				55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */,
-				55CACC5929AC39F2000027FC /* ChatViewModel.swift in Sources */,
+				55CACC5929AC39F2000027FC /* JuCManager.swift in Sources */,
 				55BD9CCA29C02A5900B065C3 /* TextEntryView.swift in Sources */,
 				55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */,
 			);

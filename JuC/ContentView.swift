@@ -11,13 +11,14 @@ import OpenAIKit
 
 struct ContentView: View {
     @State private var sheetPosition: SheetPosition = .minimized
-    @StateObject var JuCManager = ChatViewModel()
+    @StateObject var jucManager = JuCManager()
     
     var body: some View {
         ZStack {
-            ChatView(JuCManager: JuCManager)
+            Color("SpacePurple")
+            ChatView(jucManager: jucManager)
             BottomSheetView(sheetPosition: $sheetPosition, maxHeight: 500) {
-                TextEntryView(JuCManager: JuCManager, sheetSize: $sheetPosition)
+                TextEntryView(jucManager: jucManager, sheetSize: $sheetPosition)
                     .padding(.bottom, 45)
             }
             .padding(.bottom, -45)

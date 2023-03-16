@@ -1,10 +1,10 @@
 import SwiftUI
 
 fileprivate enum Constants {
-    static let radius: CGFloat = 16
+    static let radius: CGFloat = 45
     static let indicatorHeight: CGFloat = 6
     static let indicatorWidth: CGFloat = 60
-    static let minHeightRatio: CGFloat = 0.25
+    static let minHeightRatio: CGFloat = 0.3
     static let midHeightRatio: CGFloat = 0.5
 }
 
@@ -48,7 +48,9 @@ struct BottomSheetView<Content: View>: View {
             case .maximized:
                 sheetPosition = .middle
             }
+#if !os(macOS)
             dismissKeyboard(true)
+            #endif
         }
     }
 
@@ -79,7 +81,9 @@ struct BottomSheetView<Content: View>: View {
                 }.onEnded { value in
                     let minHeightThreshold = self.minHeight * 0.5
                     let midHeightThreshold = self.midHeight * 0.5
+#if !os(macOS)
                     dismissKeyboard(true)
+                    #endif
                     if value.translation.height > 0 {
                         if abs(value.translation.height) > minHeightThreshold {
                             self.sheetPosition = .minimized
