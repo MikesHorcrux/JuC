@@ -37,7 +37,7 @@ struct TextEntryView: View {
 //                              )
                       }
                       .padding(2)
-                      .background(Color("DarkPurple"))
+                      .background(Color(.black))
                       .cornerRadius(20)
                       .padding()
                 .onTapGesture {
@@ -64,7 +64,7 @@ struct TextEntryView: View {
                             .font(.title)
                             .foregroundColor(.gray)
                             .padding()
-                            .background(Color("DarkPurple"))
+                            .background(.red)
                             .clipShape(Circle())
                             .padding()
                     }
@@ -81,7 +81,7 @@ struct TextEntryView: View {
 struct TextEntryView_Previews: PreviewProvider {
     static var previews: some View {
         VStack{
-            Text("hey")
+            TextEntryView(jucManager: JuCManager(), sheetSize: .constant(.maximized))
         }
     }
 }

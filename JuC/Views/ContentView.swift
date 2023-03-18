@@ -15,7 +15,8 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color("SpacePurple")
+            Color("SilverLakeBlue")
+                .edgesIgnoringSafeArea(.all)
             ChatView(jucManager: jucManager)
             BottomSheetView(sheetPosition: $sheetPosition, maxHeight: 500) {
                 TextEntryView(jucManager: jucManager, sheetSize: $sheetPosition)

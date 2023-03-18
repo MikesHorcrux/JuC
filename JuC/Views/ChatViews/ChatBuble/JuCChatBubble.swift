@@ -16,6 +16,7 @@ struct JuCChatBubble: View {
                 .padding(.all, 20)
                 .foregroundColor(Color.white)
                 .background(Color("SpaceCadet"))
+                .textSelection(.enabled)
         }
         .padding(.trailing, 30)
         

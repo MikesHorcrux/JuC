@@ -9,8 +9,13 @@
 /* Begin PBXBuildFile section */
 		554DFA4B29B9641900661D00 /* OpenAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 554DFA4A29B9641900661D00 /* OpenAIKit */; };
 		558D329829C29F7F00075D41 /* view+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329729C29F7F00075D41 /* view+Extention.swift */; };
-		558D329A29C2E1AC00075D41 /* MainChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329929C2E1AC00075D41 /* MainChatView.swift */; };
-		558D329C29C2E23100075D41 /* TopRoundedRectangleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329B29C2E23100075D41 /* TopRoundedRectangleShape.swift */; };
+		558D32A029C2F0D200075D41 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 558D329F29C2F0D200075D41 /* FirebaseAuth */; };
+		558D32A229C2F4DC00075D41 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32A129C2F4DC00075D41 /* AuthManager.swift */; };
+		558D32A429C2F56400075D41 /* string+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32A329C2F56400075D41 /* string+Extention.swift */; };
+		558D32A629C2FA7400075D41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 558D32A529C2FA7400075D41 /* GoogleService-Info.plist */; };
+		558D32A929C3E53A00075D41 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32A829C3E53A00075D41 /* AuthView.swift */; };
+		558D32AB29C3F76100075D41 /* CircularBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32AA29C3F76100075D41 /* CircularBottomSheet.swift */; };
+		558D32B029C667CF00075D41 /* RoundedCornerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32AF29C667CF00075D41 /* RoundedCornerButtonStyle.swift */; };
 		55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */; };
 		55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */; };
 		55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */; };
@@ -29,8 +34,12 @@
 
 /* Begin PBXFileReference section */
 		558D329729C29F7F00075D41 /* view+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "view+Extention.swift"; sourceTree = "<group>"; };
-		558D329929C2E1AC00075D41 /* MainChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainChatView.swift; sourceTree = "<group>"; };
-		558D329B29C2E23100075D41 /* TopRoundedRectangleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRoundedRectangleShape.swift; sourceTree = "<group>"; };
+		558D32A129C2F4DC00075D41 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		558D32A329C2F56400075D41 /* string+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "string+Extention.swift"; sourceTree = "<group>"; };
+		558D32A529C2FA7400075D41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		558D32A829C3E53A00075D41 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		558D32AA29C3F76100075D41 /* CircularBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBottomSheet.swift; sourceTree = "<group>"; };
+		558D32AF29C667CF00075D41 /* RoundedCornerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButtonStyle.swift; sourceTree = "<group>"; };
 		55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubleShape.swift; sourceTree = "<group>"; };
 		55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatBubble.swift; sourceTree = "<group>"; };
@@ -54,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CACC5729AC3849000027FC /* AsyncHTTPClient in Frameworks */,
+				558D32A029C2F0D200075D41 /* FirebaseAuth in Frameworks */,
 				554DFA4B29B9641900661D00 /* OpenAIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,19 +75,46 @@
 			isa = PBXGroup;
 			children = (
 				558D329729C29F7F00075D41 /* view+Extention.swift */,
+				558D32A329C2F56400075D41 /* string+Extention.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		558D329D29C2EE3700075D41 /* ChatViews */ = {
+			isa = PBXGroup;
+			children = (
+				55BD9CCB29C0385000B065C3 /* BottomSheet.swift */,
+				55BD9CC929C02A5900B065C3 /* TextEntryView.swift */,
+				55CACC5A29AC3A4F000027FC /* ChatView.swift */,
+				55BD9CC029BEA63D00B065C3 /* ChatBuble */,
+			);
+			path = ChatViews;
+			sourceTree = "<group>";
+		};
+		558D32A729C3E4F200075D41 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				558D32A829C3E53A00075D41 /* AuthView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		558D32AE29C667A500075D41 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				558D32AF29C667CF00075D41 /* RoundedCornerButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		55BD9CBA29BEA12400B065C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				55CACC5A29AC3A4F000027FC /* ChatView.swift */,
-				55BD9CC029BEA63D00B065C3 /* ChatBuble */,
-				55BD9CC929C02A5900B065C3 /* TextEntryView.swift */,
-				55BD9CCB29C0385000B065C3 /* BottomSheet.swift */,
-				558D329929C2E1AC00075D41 /* MainChatView.swift */,
-				558D329B29C2E23100075D41 /* TopRoundedRectangleShape.swift */,
+				558D32AE29C667A500075D41 /* Styles */,
+				558D32A729C3E4F200075D41 /* Login */,
+				55CACC3B29AAAAE8000027FC /* ContentView.swift */,
+				558D329D29C2EE3700075D41 /* ChatViews */,
+				558D32AA29C3F76100075D41 /* CircularBottomSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,12 +156,12 @@
 		55CACC3829AAAAE8000027FC /* JuC */ = {
 			isa = PBXGroup;
 			children = (
+				558D32A529C2FA7400075D41 /* GoogleService-Info.plist */,
 				558D329629C29F6900075D41 /* Extentions */,
 				55BD9CBB29BEA12E00B065C3 /* ViewModels */,
 				55BD9CBA29BEA12400B065C3 /* Views */,
 				55CACC5229ABF49D000027FC /* Managers */,
 				55CACC3929AAAAE8000027FC /* JuCApp.swift */,
-				55CACC3B29AAAAE8000027FC /* ContentView.swift */,
 				55CACC3D29AAAAE9000027FC /* Assets.xcassets */,
 				55CACC3F29AAAAE9000027FC /* JuC.entitlements */,
 				55CACC4029AAAAE9000027FC /* Preview Content */,
@@ -145,6 +182,7 @@
 			children = (
 				55CACC5829AC39F2000027FC /* JuCManager.swift */,
 				55CACC5329ABF4B5000027FC /* OpenAiManager.swift */,
+				558D32A129C2F4DC00075D41 /* AuthManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -168,6 +206,7 @@
 			packageProductDependencies = (
 				55CACC5629AC3849000027FC /* AsyncHTTPClient */,
 				554DFA4A29B9641900661D00 /* OpenAIKit */,
+				558D329F29C2F0D200075D41 /* FirebaseAuth */,
 			);
 			productName = JuC;
 			productReference = 55CACC3629AAAAE8000027FC /* JuC.app */;
@@ -200,6 +239,7 @@
 			packageReferences = (
 				55CACC5529AC3849000027FC /* XCRemoteSwiftPackageReference "async-http-client" */,
 				554DFA4929B9641900661D00 /* XCRemoteSwiftPackageReference "openai-kit" */,
+				558D329E29C2F0D200075D41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 55CACC3729AAAAE8000027FC /* Products */;
 			projectDirPath = "";
@@ -217,6 +257,7 @@
 			files = (
 				55CACC4229AAAAE9000027FC /* Preview Assets.xcassets in Resources */,
 				55CACC3E29AAAAE9000027FC /* Assets.xcassets in Resources */,
+				558D32A629C2FA7400075D41 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,17 +269,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */,
-				558D329A29C2E1AC00075D41 /* MainChatView.swift in Sources */,
 				55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */,
 				55BD9CCC29C0385000B065C3 /* BottomSheet.swift in Sources */,
+				558D32A229C2F4DC00075D41 /* AuthManager.swift in Sources */,
 				558D329829C29F7F00075D41 /* view+Extention.swift in Sources */,
 				55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */,
 				55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */,
-				558D329C29C2E23100075D41 /* TopRoundedRectangleShape.swift in Sources */,
+				558D32AB29C3F76100075D41 /* CircularBottomSheet.swift in Sources */,
+				558D32B029C667CF00075D41 /* RoundedCornerButtonStyle.swift in Sources */,
 				55CACC3A29AAAAE8000027FC /* JuCApp.swift in Sources */,
 				55BD9CC629BEA81900B065C3 /* JuCChatBubble.swift in Sources */,
 				55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */,
 				55CACC5929AC39F2000027FC /* JuCManager.swift in Sources */,
+				558D32A929C3E53A00075D41 /* AuthView.swift in Sources */,
+				558D32A429C2F56400075D41 /* string+Extention.swift in Sources */,
 				55BD9CCA29C02A5900B065C3 /* TextEntryView.swift in Sources */,
 				55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */,
 			);
@@ -468,6 +512,14 @@
 				version = 1.2.1;
 			};
 		};
+		558D329E29C2F0D200075D41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 9.6.0;
+			};
+		};
 		55CACC5529AC3849000027FC /* XCRemoteSwiftPackageReference "async-http-client" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-server/async-http-client.git";
@@ -483,6 +535,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 554DFA4929B9641900661D00 /* XCRemoteSwiftPackageReference "openai-kit" */;
 			productName = OpenAIKit;
+		};
+		558D329F29C2F0D200075D41 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558D329E29C2F0D200075D41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 		55CACC5629AC3849000027FC /* AsyncHTTPClient */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,19 +1,26 @@
+//
+//  CircularBottomSheet.swift
+//  JuC
+//
+//  Created by Mike on 3/16/23.
+//
+
 import SwiftUI
 
 fileprivate enum Constants {
     static let radius: CGFloat = 45
     static let indicatorHeight: CGFloat = 6
     static let indicatorWidth: CGFloat = 60
-    static let minHeightRatio: CGFloat = 0.3
+    static let minHeightRatio: CGFloat = -0.3
     static let midHeightRatio: CGFloat = 0.5
 }
 
-enum SheetPosition {
+enum CircularSheetPosition {
     case minimized, middle, maximized
 }
 
-struct BottomSheetView<Content: View>: View {
-    @Binding var sheetPosition: SheetPosition
+struct CircularBottomSheet<Content: View>: View {
+    @Binding var sheetPosition: CircularSheetPosition
 
     let maxHeight: CGFloat
     let minHeight: CGFloat
@@ -34,12 +41,16 @@ struct BottomSheetView<Content: View>: View {
     }
 
     private var indicator: some View {
-        RoundedRectangle(cornerRadius: Constants.radius)
-            .fill(Color.secondary)
-            .frame(
-                width: Constants.indicatorWidth,
-                height: Constants.indicatorHeight
-        ).onTapGesture {
+        ZStack {
+            Circle()
+                .fill(Color.secondary)
+                .frame(width: Constants.indicatorWidth, height: Constants.indicatorHeight)
+
+            Text("5") // Replace "5" with the desired digit
+                .font(.system(size: 20))
+                .foregroundColor(.white)
+        }
+        .onTapGesture {
             switch sheetPosition {
             case .minimized:
                 sheetPosition = .middle
@@ -54,7 +65,7 @@ struct BottomSheetView<Content: View>: View {
         }
     }
 
-    init(sheetPosition: Binding<SheetPosition>, maxHeight: CGFloat, @ViewBuilder content: () -> Content) {
+    init(sheetPosition: Binding<CircularSheetPosition>, maxHeight: CGFloat, @ViewBuilder content: () -> Content) {
         self.minHeight = maxHeight * Constants.minHeightRatio
         self.midHeight = maxHeight * Constants.midHeightRatio
         self.maxHeight = maxHeight
@@ -68,7 +79,6 @@ struct BottomSheetView<Content: View>: View {
                 self.indicator.padding()
                 self.content
             }
-            .blur(radius: 0.9)
             .frame(width: geometry.size.width, height: self.maxHeight, alignment: .top)
             .background(Color("BottomSheet").opacity(0.9))
             .cornerRadius(Constants.radius)
@@ -107,9 +117,9 @@ struct BottomSheetView<Content: View>: View {
     }
 }
 
-struct BottomSheetView_Previews: PreviewProvider {
+struct CircularBottomSheet_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSheetView(sheetPosition: .constant(.minimized), maxHeight: 600) {
+        CircularBottomSheet(sheetPosition: .constant(.maximized), maxHeight: 600) {
             Rectangle().fill(Color.red)
         }.edgesIgnoringSafeArea(.all)
     }

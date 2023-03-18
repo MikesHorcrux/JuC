@@ -16,6 +16,7 @@ struct UserChatBubble: View {
                 .padding(.all, 20)
                 .foregroundColor(Color.white)
                 .background(Color("PlumPurple"))
+                .textSelection(.enabled)
         }
         .padding(.leading, 30)
         
