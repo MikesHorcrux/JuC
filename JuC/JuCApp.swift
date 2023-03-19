@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import KeyboardObserving
 
 @main
 struct JuCApp: App {
@@ -20,13 +21,15 @@ struct JuCApp: App {
     @ViewBuilder
     var body: some Scene {
         WindowGroup {
-//            if authManager.user != nil {
-//                AuthView()
-//                    .preferredColorScheme(.dark)
-//                    .environmentObject(authManager)             } else {
+            if authManager.user == nil {
+                AuthView()
+                    .environmentObject(authManager)
+                    //.environmentObject(Keyboard()) // Add the Keyboard environment object here.
+            } else {
                 ContentView()
-                    .environmentObject(authManager) 
-            //}
+                    .environmentObject(authManager)
+                    .environmentObject(Keyboard()) // Add the Keyboard environment object here.
+            }
         }
     }
 }

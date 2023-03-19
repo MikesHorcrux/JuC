@@ -4,6 +4,7 @@ import OpenAIKit
 struct ChatView: View {
     @ObservedObject var jucManager: JuCManager
     private let cornerRadius: CGFloat = 35.0
+    @State private var sheetPosition: SheetPosition = .minimized
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -34,10 +35,7 @@ struct ChatView: View {
                         }
                     }
                 }
-                .padding(.bottom,145)
-                .background(RoundedRectangle(cornerRadius: cornerRadius)
-                                .fill(Color(.systemBackground)))
-                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                .padding(.bottom,150)
                 .onChange(of: jucManager.messages) { _ in
                     let lastIndex = jucManager.messages.count - 1
                     if lastIndex >= 0 {
@@ -45,9 +43,12 @@ struct ChatView: View {
                     }
                 }
             }
+            BottomSheetView(sheetPosition: $sheetPosition, maxHeight: 500) {
+                TextEntryView(jucManager: jucManager, sheetSize: $sheetPosition)
+                    .padding(.bottom, 45)
+            }
         }
-        .padding(.top, 60)
-        .padding(.bottom, -35)
+        
     }
 }
 

@@ -32,6 +32,7 @@ class AuthenticationManager: NSObject, ObservableObject {
             user = result.user
         } catch {
             self.error = error
+            print(error)
         }
         isAuthenticating = false
     }

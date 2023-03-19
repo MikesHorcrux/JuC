@@ -15,7 +15,7 @@ struct JuCChatBubble: View {
                 .multilineTextAlignment(.leading)
                 .padding(.all, 20)
                 .foregroundColor(Color.white)
-                .background(Color("SpaceCadet"))
+                .background(Color("RichBlack"))
                 .textSelection(.enabled)
         }
         .padding(.trailing, 30)

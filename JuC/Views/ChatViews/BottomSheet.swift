@@ -20,7 +20,6 @@ struct BottomSheetView<Content: View>: View {
     let midHeight: CGFloat
     let content: Content
 
-
     @GestureState private var translation: CGFloat = 0
 
     private var offset: CGFloat {
@@ -69,9 +68,8 @@ struct BottomSheetView<Content: View>: View {
                 self.indicator.padding()
                 self.content
             }
-            .blur(radius: 0.9)
             .frame(width: geometry.size.width, height: self.maxHeight, alignment: .top)
-            .background(Color("BottomSheet").opacity(0.9))
+            .background(Color("RichBlack").opacity(0.8))
             .cornerRadius(Constants.radius)
             .frame(height: geometry.size.height, alignment: .bottom)
             .offset(y: max(self.offset + self.translation, 0))

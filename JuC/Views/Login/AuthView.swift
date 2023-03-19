@@ -10,20 +10,27 @@ import AuthenticationServices
 
 struct AuthView: View {
     @EnvironmentObject var authManager: AuthenticationManager
+    @State var sheetPosition: SheetPositionWithDismiss = .dissMissed
     var body: some View {
-        NavigationStack {
+        ZStack {
+            RepeatingPlayer()
+                .edgesIgnoringSafeArea(.all)
             VStack{
                viewContent
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color("SilverLakeBlue").edgesIgnoringSafeArea(.all))
+            BottomSheetWithDismissView(sheetPosition: $sheetPosition, maxHeight: UIScreen.main.bounds.height - 80) {
+                EmailSignUpView()
+            }
+            .edgesIgnoringSafeArea(.bottom)
+            //.background(Color("SilverLakeBlue").edgesIgnoringSafeArea(.all))
         }
     }
     
     private var viewContent: some View {
         VStack{
             Text("Welcome to JuC - Unleash Your Communication Superpowers!")
-                .foregroundColor(Color("Platinum"))
+                .foregroundColor(Color("DarkGrey"))
                 .font(.title)
                 .fontWeight(.heavy)
                 .multilineTextAlignment(.leading)
@@ -32,7 +39,7 @@ struct AuthView: View {
             HStack {
                 Spacer()
                 Text("It's time to discover the untapped potential of the human species when it comes to professional communication. With JuC, your AI-powered confidant, you're about to embark on a journey to greatness.")
-                    .foregroundColor(Color("Platinum"))
+                    .foregroundColor(Color("DarkGrey"))
                     .font(.title2)
                     .fontWeight(.bold)
                 .multilineTextAlignment(.trailing)
@@ -40,7 +47,7 @@ struct AuthView: View {
             .padding()
             Spacer()
             Button("Continue with Email") {
-            
+                sheetPosition = .maximized
             }
             .buttonStyle(RoundedCornerButtonStyle())
             SignInWithAppleButton { request in

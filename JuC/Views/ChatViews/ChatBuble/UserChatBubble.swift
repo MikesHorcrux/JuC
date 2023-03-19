@@ -15,7 +15,7 @@ struct UserChatBubble: View {
                 .multilineTextAlignment(.leading)
                 .padding(.all, 20)
                 .foregroundColor(Color.white)
-                .background(Color("PlumPurple"))
+                .background(Color("OxfordBlue"))
                 .textSelection(.enabled)
         }
         .padding(.leading, 30)

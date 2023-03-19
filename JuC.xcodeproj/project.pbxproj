@@ -16,6 +16,14 @@
 		558D32A929C3E53A00075D41 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32A829C3E53A00075D41 /* AuthView.swift */; };
 		558D32AB29C3F76100075D41 /* CircularBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32AA29C3F76100075D41 /* CircularBottomSheet.swift */; };
 		558D32B029C667CF00075D41 /* RoundedCornerButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32AF29C667CF00075D41 /* RoundedCornerButtonStyle.swift */; };
+		558D32B229C66FDE00075D41 /* RepeatableVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32B129C66FDE00075D41 /* RepeatableVideoView.swift */; };
+		558D32B629C670BA00075D41 /* the-camera-moves-slowly-around-the-arm-of-the-robot-the-hand-opens-the-fingers-has--SBV-333869886-HD.mov in Resources */ = {isa = PBXBuildFile; fileRef = 558D32B529C670BA00075D41 /* the-camera-moves-slowly-around-the-arm-of-the-robot-the-hand-opens-the-fingers-has--SBV-333869886-HD.mov */; };
+		558D32B829C675B700075D41 /* BottomSheetWithDismissView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32B729C675B700075D41 /* BottomSheetWithDismissView.swift */; };
+		558D32BB29C685B800075D41 /* EmailSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32BA29C685B800075D41 /* EmailSignUpView.swift */; };
+		558D32BD29C6886300075D41 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32BC29C6886300075D41 /* SignInView.swift */; };
+		558D32BF29C688A700075D41 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32BE29C688A700075D41 /* LogInView.swift */; };
+		558D32C229C699FB00075D41 /* KeyboardObserving in Frameworks */ = {isa = PBXBuildFile; productRef = 558D32C129C699FB00075D41 /* KeyboardObserving */; };
+		558D32C429C69E4500075D41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32C329C69E4500075D41 /* SceneDelegate.swift */; };
 		55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */; };
 		55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */; };
 		55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */; };
@@ -40,6 +48,13 @@
 		558D32A829C3E53A00075D41 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		558D32AA29C3F76100075D41 /* CircularBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularBottomSheet.swift; sourceTree = "<group>"; };
 		558D32AF29C667CF00075D41 /* RoundedCornerButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornerButtonStyle.swift; sourceTree = "<group>"; };
+		558D32B129C66FDE00075D41 /* RepeatableVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatableVideoView.swift; sourceTree = "<group>"; };
+		558D32B529C670BA00075D41 /* the-camera-moves-slowly-around-the-arm-of-the-robot-the-hand-opens-the-fingers-has--SBV-333869886-HD.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "the-camera-moves-slowly-around-the-arm-of-the-robot-the-hand-opens-the-fingers-has--SBV-333869886-HD.mov"; sourceTree = "<group>"; };
+		558D32B729C675B700075D41 /* BottomSheetWithDismissView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetWithDismissView.swift; sourceTree = "<group>"; };
+		558D32BA29C685B800075D41 /* EmailSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpView.swift; sourceTree = "<group>"; };
+		558D32BC29C6886300075D41 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		558D32BE29C688A700075D41 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		558D32C329C69E4500075D41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		55BD9CBE29BEA43200B065C3 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		55BD9CC129BEA65500B065C3 /* ChatBubleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubleShape.swift; sourceTree = "<group>"; };
 		55BD9CC329BEA6D000B065C3 /* UserChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatBubble.swift; sourceTree = "<group>"; };
@@ -63,6 +78,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CACC5729AC3849000027FC /* AsyncHTTPClient in Frameworks */,
+				558D32C229C699FB00075D41 /* KeyboardObserving in Frameworks */,
 				558D32A029C2F0D200075D41 /* FirebaseAuth in Frameworks */,
 				554DFA4B29B9641900661D00 /* OpenAIKit in Frameworks */,
 			);
@@ -107,14 +123,27 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		558D32B929C6859100075D41 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				558D32BA29C685B800075D41 /* EmailSignUpView.swift */,
+				558D32BC29C6886300075D41 /* SignInView.swift */,
+				558D32BE29C688A700075D41 /* LogInView.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		55BD9CBA29BEA12400B065C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				558D32B929C6859100075D41 /* Auth */,
 				558D32AE29C667A500075D41 /* Styles */,
 				558D32A729C3E4F200075D41 /* Login */,
 				55CACC3B29AAAAE8000027FC /* ContentView.swift */,
 				558D329D29C2EE3700075D41 /* ChatViews */,
 				558D32AA29C3F76100075D41 /* CircularBottomSheet.swift */,
+				558D32B129C66FDE00075D41 /* RepeatableVideoView.swift */,
+				558D32B729C675B700075D41 /* BottomSheetWithDismissView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +185,7 @@
 		55CACC3829AAAAE8000027FC /* JuC */ = {
 			isa = PBXGroup;
 			children = (
+				558D32B529C670BA00075D41 /* the-camera-moves-slowly-around-the-arm-of-the-robot-the-hand-opens-the-fingers-has--SBV-333869886-HD.mov */,
 				558D32A529C2FA7400075D41 /* GoogleService-Info.plist */,
 				558D329629C29F6900075D41 /* Extentions */,
 				55BD9CBB29BEA12E00B065C3 /* ViewModels */,
@@ -165,6 +195,7 @@
 				55CACC3D29AAAAE9000027FC /* Assets.xcassets */,
 				55CACC3F29AAAAE9000027FC /* JuC.entitlements */,
 				55CACC4029AAAAE9000027FC /* Preview Content */,
+				558D32C329C69E4500075D41 /* SceneDelegate.swift */,
 			);
 			path = JuC;
 			sourceTree = "<group>";
@@ -207,6 +238,7 @@
 				55CACC5629AC3849000027FC /* AsyncHTTPClient */,
 				554DFA4A29B9641900661D00 /* OpenAIKit */,
 				558D329F29C2F0D200075D41 /* FirebaseAuth */,
+				558D32C129C699FB00075D41 /* KeyboardObserving */,
 			);
 			productName = JuC;
 			productReference = 55CACC3629AAAAE8000027FC /* JuC.app */;
@@ -240,6 +272,7 @@
 				55CACC5529AC3849000027FC /* XCRemoteSwiftPackageReference "async-http-client" */,
 				554DFA4929B9641900661D00 /* XCRemoteSwiftPackageReference "openai-kit" */,
 				558D329E29C2F0D200075D41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				558D32C029C699FB00075D41 /* XCRemoteSwiftPackageReference "KeyboardObserving" */,
 			);
 			productRefGroup = 55CACC3729AAAAE8000027FC /* Products */;
 			projectDirPath = "";
@@ -256,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CACC4229AAAAE9000027FC /* Preview Assets.xcassets in Resources */,
+				558D32B629C670BA00075D41 /* the-camera-moves-slowly-around-the-arm-of-the-robot-the-hand-opens-the-fingers-has--SBV-333869886-HD.mov in Resources */,
 				55CACC3E29AAAAE9000027FC /* Assets.xcassets in Resources */,
 				558D32A629C2FA7400075D41 /* GoogleService-Info.plist in Resources */,
 			);
@@ -271,15 +305,21 @@
 				55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */,
 				55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */,
 				55BD9CCC29C0385000B065C3 /* BottomSheet.swift in Sources */,
+				558D32B829C675B700075D41 /* BottomSheetWithDismissView.swift in Sources */,
 				558D32A229C2F4DC00075D41 /* AuthManager.swift in Sources */,
 				558D329829C29F7F00075D41 /* view+Extention.swift in Sources */,
+				558D32C429C69E4500075D41 /* SceneDelegate.swift in Sources */,
 				55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */,
 				55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */,
+				558D32BF29C688A700075D41 /* LogInView.swift in Sources */,
 				558D32AB29C3F76100075D41 /* CircularBottomSheet.swift in Sources */,
 				558D32B029C667CF00075D41 /* RoundedCornerButtonStyle.swift in Sources */,
 				55CACC3A29AAAAE8000027FC /* JuCApp.swift in Sources */,
 				55BD9CC629BEA81900B065C3 /* JuCChatBubble.swift in Sources */,
+				558D32B229C66FDE00075D41 /* RepeatableVideoView.swift in Sources */,
+				558D32BB29C685B800075D41 /* EmailSignUpView.swift in Sources */,
 				55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */,
+				558D32BD29C6886300075D41 /* SignInView.swift in Sources */,
 				55CACC5929AC39F2000027FC /* JuCManager.swift in Sources */,
 				558D32A929C3E53A00075D41 /* AuthView.swift in Sources */,
 				558D32A429C2F56400075D41 /* string+Extention.swift in Sources */,
@@ -520,6 +560,14 @@
 				minimumVersion = 9.6.0;
 			};
 		};
+		558D32C029C699FB00075D41 /* XCRemoteSwiftPackageReference "KeyboardObserving" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nickffox/KeyboardObserving";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		55CACC5529AC3849000027FC /* XCRemoteSwiftPackageReference "async-http-client" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-server/async-http-client.git";
@@ -540,6 +588,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 558D329E29C2F0D200075D41 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		558D32C129C699FB00075D41 /* KeyboardObserving */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558D32C029C699FB00075D41 /* XCRemoteSwiftPackageReference "KeyboardObserving" */;
+			productName = KeyboardObserving;
 		};
 		55CACC5629AC3849000027FC /* AsyncHTTPClient */ = {
 			isa = XCSwiftPackageProductDependency;

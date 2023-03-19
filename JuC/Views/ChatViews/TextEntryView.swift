@@ -22,22 +22,9 @@ struct TextEntryView: View {
                           TextEditor(text: $textEntry)
                               .scrollContentBackground(.hidden)
                               .padding(5)
-//                              .overlay(
-//                                  Group {
-//                                      if textEntry.isEmpty || haveTextPrompt {
-//                                          VStack {
-//                                              Text("Ask JuC for help with professional communication...")
-//                                                  .foregroundColor(.gray)
-//                                              .padding()
-//                                              .padding(.top, 5)
-//                                              Spacer()
-//                                          }
-//                                      }
-//                                  }
-//                              )
                       }
                       .padding(2)
-                      .background(Color(.black))
+                      .background(Color("OxfordBlue"))
                       .cornerRadius(20)
                       .padding()
                 .onTapGesture {
@@ -62,9 +49,9 @@ struct TextEntryView: View {
                         Image(systemName: "arrow.up")
                             .fontWeight(.semibold)
                             .font(.title)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color("SilverLakeBlue"))
                             .padding()
-                            .background(.red)
+                            .background(Color("BottomSheet"))
                             .clipShape(Circle())
                             .padding()
                     }
