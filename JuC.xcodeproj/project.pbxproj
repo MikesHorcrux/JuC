@@ -115,7 +115,6 @@
 		558D329D29C2EE3700075D41 /* ChatViews */ = {
 			isa = PBXGroup;
 			children = (
-				55BD9CCB29C0385000B065C3 /* BottomSheet.swift */,
 				55BD9CC929C02A5900B065C3 /* TextEntryView.swift */,
 				55CACC5A29AC3A4F000027FC /* ChatView.swift */,
 				55BD9CC029BEA63D00B065C3 /* ChatBuble */,
@@ -160,20 +159,45 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		559506B829D0D0F9002D6E49 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				558D32AA29C3F76100075D41 /* CircularBottomSheet.swift */,
+				558D32B129C66FDE00075D41 /* RepeatableVideoView.swift */,
+				55BD9CCB29C0385000B065C3 /* BottomSheet.swift */,
+				558D32B729C675B700075D41 /* BottomSheetWithDismissView.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		559506B929D0D11C002D6E49 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				558D32D129C7A5A600075D41 /* UserLabel.swift */,
+				558D32D329C7AE3E00075D41 /* AccountView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		559506BA29D0D132002D6E49 /* MainAppViews */ = {
+			isa = PBXGroup;
+			children = (
+				55CACC3B29AAAAE8000027FC /* ContentView.swift */,
+				558D32CF29C7A3D600075D41 /* MainView.swift */,
+			);
+			path = MainAppViews;
+			sourceTree = "<group>";
+		};
 		55BD9CBA29BEA12400B065C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				559506BA29D0D132002D6E49 /* MainAppViews */,
+				559506B829D0D0F9002D6E49 /* Sheets */,
 				558E127929CFD5AA004CCF71 /* Questions */,
 				558D32B929C6859100075D41 /* Auth */,
 				558D32AE29C667A500075D41 /* Styles */,
-				55CACC3B29AAAAE8000027FC /* ContentView.swift */,
 				558D329D29C2EE3700075D41 /* ChatViews */,
-				558D32AA29C3F76100075D41 /* CircularBottomSheet.swift */,
-				558D32B129C66FDE00075D41 /* RepeatableVideoView.swift */,
-				558D32B729C675B700075D41 /* BottomSheetWithDismissView.swift */,
-				558D32CF29C7A3D600075D41 /* MainView.swift */,
-				558D32D129C7A5A600075D41 /* UserLabel.swift */,
-				558D32D329C7AE3E00075D41 /* AccountView.swift */,
+				559506B929D0D11C002D6E49 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,18 +240,18 @@
 		55CACC3829AAAAE8000027FC /* JuC */ = {
 			isa = PBXGroup;
 			children = (
-				558E127C29CFF0C4004CCF71 /* Model */,
 				558D32CD29C79D0200075D41 /* robot-arm-bionic-prosthesis-connection-communication-SBV-332135206-HD.mov */,
 				558D32A529C2FA7400075D41 /* GoogleService-Info.plist */,
+				558D32C329C69E4500075D41 /* SceneDelegate.swift */,
+				55CACC3929AAAAE8000027FC /* JuCApp.swift */,
+				55CACC3D29AAAAE9000027FC /* Assets.xcassets */,
+				55CACC3F29AAAAE9000027FC /* JuC.entitlements */,
+				558E127C29CFF0C4004CCF71 /* Model */,
 				558D329629C29F6900075D41 /* Extentions */,
 				55BD9CBB29BEA12E00B065C3 /* ViewModels */,
 				55BD9CBA29BEA12400B065C3 /* Views */,
 				55CACC5229ABF49D000027FC /* Managers */,
-				55CACC3929AAAAE8000027FC /* JuCApp.swift */,
-				55CACC3D29AAAAE9000027FC /* Assets.xcassets */,
-				55CACC3F29AAAAE9000027FC /* JuC.entitlements */,
 				55CACC4029AAAAE9000027FC /* Preview Content */,
-				558D32C329C69E4500075D41 /* SceneDelegate.swift */,
 			);
 			path = JuC;
 			sourceTree = "<group>";
