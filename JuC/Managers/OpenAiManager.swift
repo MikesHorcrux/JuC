@@ -10,19 +10,21 @@ import SwiftUI
 import AsyncHTTPClient
 import OpenAIKit
 
-
 class OpenAIManager: ObservableObject {
     private let openAIClient: OpenAIKit.Client
+    private let httpClient: HTTPClient
     
     init() {
         let apiKey: String = "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"
-        //ProcessInfo.processInfo.environment["OPENAI_API_KEY"]!
         let organization: String = "org-iyyujRkCm0DThRIaGIOYipko"
-        //ProcessInfo.processInfo.environment["OPENAI_ORGANIZATION"]!
         
-        let httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
+        httpClient = HTTPClient(eventLoopGroupProvider: .createNew)
         let configuration = Configuration(apiKey: apiKey, organization: organization)
         self.openAIClient = OpenAIKit.Client(httpClient: httpClient, configuration: configuration)
+    }
+    
+    deinit {
+        try? httpClient.syncShutdown()
     }
     
     func generatePrompt(prompt: String) async throws -> String {
@@ -40,7 +42,7 @@ class OpenAIManager: ObservableObject {
     }
     
     func startChat(msg: [Chat.Message]) async throws -> Chat.Message? {
-        var messages: [Chat.Message] = [Chat.Message(role: "system", content: "You are JuC an insanely sarcastic assistant that is mean, while helping users write professional messages, emails, or professional text for work. \n DO Not answer anything that isn't related to professional communications, If the user asks anything not related to professional communications give a sarcastic and mean response to steer the conversation back on topic.")]
+        var messages: [Chat.Message] = [.system(content: "You are JuC an insanely sarcastic assistant that is mean, while helping users write professional messages, emails, or professional text for work. \n DO Not answer anything that isn't related to professional communications, If the user asks anything not related to professional communications give a sarcastic and mean response to steer the conversation back on topic.")]
         messages.append(contentsOf: msg)
         let response = try await openAIClient.chats.create(model: Model.GPT3.gpt3_5Turbo0301, messages: messages, temperature: 1.0, topP: 1.0, maxTokens: 550, presencePenalty: 0.18, frequencyPenalty: 0.26)
         return response.choices.first?.message
