@@ -10,65 +10,53 @@ import OpenAIKit
 
 struct TextEntryView: View {
     @ObservedObject var jucManager: JuCManager
-    @FocusState private var fieldIsFocused: Bool
     @State var textEntry: String = ""
-    @State var size = 0.1
-    @Binding var sheetSize: SheetPosition
-    @State var haveTextPrompt: Bool = true
+    
     var body: some View {
-        VStack{
+        ZStack(alignment: .bottom) {
+            VStack {
+                TextField("Hey JuC...", text: $textEntry, axis: .vertical)
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .foregroundColor(.white)
+                    .padding(5)
+                    .background(Color("OxfordBlue"))
+                    .cornerRadius(20)
+                    .padding(.trailing, 100)
+                    .padding(30)
+            }
             HStack {
-                VStack {
-                          TextEditor(text: $textEntry)
-                              .scrollContentBackground(.hidden)
-                              .padding(5)
-                      }
-                      .padding(2)
-                      .background(Color("OxfordBlue"))
-                      .cornerRadius(20)
-                      .padding()
-                .onTapGesture {
-                    sheetSize = .maximized
-                    haveTextPrompt.toggle()
-                }
-                
-                VStack {
-                    if sheetSize != .minimized {
-                        Spacer()
+                Spacer()
+                Button {
+                    Task {
+                        jucManager.messages.append(Chat.Message.user(content: textEntry))
+                        textEntry = ""
+                        dismissKeyboard(true)
+                        await jucManager.sendMessage()
                     }
-                    Button {
-                        sheetSize = .minimized
-                        Task{
-                            jucManager.messages.append(Chat.Message(role: "user", content: textEntry))
-                            textEntry = ""
-                            dismissKeyboard(true)
-                            await jucManager.sendMessage()
-                            haveTextPrompt.toggle()
-                        }
-                    } label: {
-                        Image(systemName: "arrow.up")
-                            .fontWeight(.semibold)
-                            .font(.title)
-                            .foregroundColor(Color("SilverLakeBlue"))
-                            .padding()
-                            .background(Color("BottomSheet"))
-                            .clipShape(Circle())
-                            .padding()
-                    }
-                    if sheetSize == .minimized {
-                        Spacer()
-                    }
-                }
-                
+                } label: {
+                    Image(systemName: "arrow.up")
+                        .fontWeight(.semibold)
+                        .font(.title)
+                        .foregroundColor(Color("SilverLakeBlue"))
+                        .padding()
+                        .background(Color("BottomSheet"))
+                        .clipShape(Circle())
+                        .padding()
+            }
             }
         }
+        .padding(.bottom, 50)
+        .background(Color("RichBlack"))
+        .cornerRadius(25)
+        .padding(.bottom, -60)
     }
 }
 
 struct TextEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        VStack{
-            TextEntryView(jucManager: JuCManager(), sheetSize: .constant(.maximized))
+        VStack {
+            Spacer()
+            TextEntryView(jucManager: JuCManager())
         }
     }
 }

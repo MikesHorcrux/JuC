@@ -26,7 +26,7 @@ class LoopingPlayerUIView: UIView {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let fileUrl = Bundle.main.url(forResource: "the-camera-moves-slowly-around-the-arm-of-the-robot-the-hand-opens-the-fingers-has--SBV-333869886-HD", withExtension: "mov")!
+        let fileUrl = Bundle.main.url(forResource: "robot-arm-bionic-prosthesis-connection-communication-SBV-332135206-HD", withExtension: "mov")!
         let asset = AVAsset(url: fileUrl)
         let item = AVPlayerItem(asset: asset)
         let player = AVQueuePlayer()

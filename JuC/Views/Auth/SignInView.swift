@@ -16,7 +16,7 @@ struct SignInView: View {
     var body: some View {
         VStack(spacing: 20) {
             HStack {
-                Text("Sign In")
+                Text("Sign Up")
                     .font(.largeTitle)
                 Spacer()
             }

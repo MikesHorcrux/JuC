@@ -9,35 +9,31 @@ import SwiftUI
 
 struct EmailSignUpView: View {
     @State private var isSignIn = true
-        
-        var body: some View {
-            VStack {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 25)
-                        .foregroundColor(.secondary)
-                    VStack{
-                        JuCChatBubble(msg: "Psst, it's JuC! Wanna jazz up your work talk? Log in or sign up, and let's conquer the communication world together!")
-                        UserChatBubble(msg: "...")
-                    }
-                }
-                .frame(height: 300)
-                if isSignIn {
-                    SignInView()
-                } else {
-                    LoginView()
-                }
-                Spacer()
-                Button(action: {
-                    isSignIn.toggle()
-                }) {
-                    Text(isSignIn ? "Switch to Login" : "Switch to Sign In")
-                        .foregroundColor(Color("YinMinBlue"))
-                        .fontWeight(.bold)
-                }
-                .padding()
+    
+    var body: some View {
+        VStack {
+            VStack{
+                JuCChatBubble(msg: "Psst, it's JuC! Wanna jazz up your work talk? Log in or sign up, and let's conquer the communication world together!")
+                
             }
-            .padding()
+            
+            if isSignIn {
+                SignInView()
+            } else {
+                LoginView()
+            }
+            Spacer()
+            Button(action: {
+                isSignIn.toggle()
+            }) {
+                Text(isSignIn ? "Switch to Login" : "Switch to Sign In")
+                    .foregroundColor(Color("YinMinBlue"))
+                    .fontWeight(.bold)
+            }
+            .padding(.vertical, 16)
         }
+        .padding()
+    }
 }
 
 struct EmailSignUpView_Previews: PreviewProvider {

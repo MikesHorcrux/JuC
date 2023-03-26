@@ -20,8 +20,10 @@ class AuthenticationManager: NSObject, ObservableObject {
     
     override init() {
         super.init()
-        auth.addStateDidChangeListener { [weak self] (_, user) in
-            self?.user = user
+        if let user = Auth.auth().currentUser {
+            self.user = user
+        } else {
+            self.user = nil
         }
     }
     
@@ -55,6 +57,20 @@ class AuthenticationManager: NSObject, ObservableObject {
             self.error = error
         }
     }
+    
+    func deleteUser() {
+        let user = Auth.auth().currentUser
+
+        user?.delete { error in
+          if let error = error {
+            print(error)
+          } else {
+              self.user = nil
+              print("user deleted")
+          }
+        }
+    }
+    
 }
 
 extension AuthenticationManager: ASAuthorizationControllerDelegate {

@@ -8,27 +8,49 @@
 import SwiftUI
 import Foundation
 import OpenAIKit
-import KeyboardObserving
 
 struct ContentView: View {
-   
+    @State var showTextfield: Bool = true
     @State var chatSheetPosition: SheetPositionWithDismiss = .maximized
     @StateObject var jucManager = JuCManager()
-    @EnvironmentObject var keyboard: Keyboard
     
     var body: some View {
         ZStack {
-            BottomSheetWithDismissView(sheetPosition: .constant(chatSheetPosition), maxHeight: keyboard.state.height == 0 ? UIScreen.main.bounds.height - 80 : UIScreen.main.bounds.height - 360) {
+            MainView(showTextfield: $showTextfield, chatSheetPosition: $chatSheetPosition)
+            BottomSheetWithDismissView(sheetPosition: $chatSheetPosition, maxHeight: UIScreen.main.bounds.height - 140) {
                 ChatView(jucManager: jucManager)
             }
-            .padding(.bottom, keyboard.state.height == 0 ? -UIApplication.shared.windows.first!.safeAreaInsets.bottom : -40)
+            .edgesIgnoringSafeArea(.bottom)
+            if showTextfield {
+                VStack {
+                Spacer()
+                if chatSheetPosition == .dissMissed {
+                    Button {
+                        chatSheetPosition = .maximized
+                    } label: {
+                        Image(systemName: "lines.measurement.horizontal")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color("OxfordBlue"))
+                            .clipShape(Circle())
+                    }
+                }
+                TextEntryView(jucManager: jucManager)
+                    .onTapGesture {
+                        if chatSheetPosition != .maximized {
+                            chatSheetPosition = .maximized
+                        }
+                    }
+            }
         }
-        .keyboardObserving()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Keyboard())
+        ContentView()
     }
 }
