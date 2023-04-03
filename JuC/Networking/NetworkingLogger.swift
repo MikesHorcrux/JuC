@@ -8,12 +8,15 @@
 import Foundation
 import OSLog
 
+import Foundation
+import os.log
+
 struct NetworkingLogger {
     private let logger: Logger
     private let queue: DispatchQueue
 
     init(logger: Logger = .init(),
-         queue: DispatchQueue = .init(label: "\(Self.self) Queue")) {
+         queue: DispatchQueue = .init(label: "\(Self.self)Queue")) {
         self.logger = logger
         self.queue = queue
     }
@@ -22,11 +25,14 @@ struct NetworkingLogger {
         queue.async {
             guard let url = request.url?.absoluteString,
                   let method = request.httpMethod
-                  else { return }
+            else {
+                self.logger.error("Failed to log request: invalid URL or HTTP method")
+                return
+            }
 
-            logger.trace("""
+            self.logger.debug("""
                 \(method) \(url):
-                \(request.curl)
+                \(request.curl ?? "")
                 """)
         }
     }
@@ -35,17 +41,20 @@ struct NetworkingLogger {
         queue.async {
             guard let response = response as? HTTPURLResponse,
                   let url = response.url?.absoluteString
-                  else { return }
+            else {
+                self.logger.error("Failed to log response: invalid URL or HTTP response")
+                return
+            }
 
-            logger.trace("""
+            self.logger.info("""
                 \(response.statusCode) \(url):
-                \(headerLog(response.allHeaderFields))
-                \(dataLog(data) ?? "{}")
+                \(self.headerLog(headers: response.allHeaderFields))
+                \(self.dataLog(data) ?? "{}")
                 """)
         }
     }
 
-    private func headerLog(_ headers: [AnyHashable: Any]) -> String {
+    private func headerLog(headers: [AnyHashable: Any]) -> String {
         var output = "Headers: ["
 
         for (key, value) in headers {
@@ -59,11 +68,11 @@ struct NetworkingLogger {
     private func dataLog(_ data: Data) -> String? {
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-             let prettyData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-             return String(data: prettyData, encoding: .utf8)
-         } catch {
-            return String(describing: NSString(data: data, encoding: String.Encoding.utf8.rawValue))
-         }
+            let prettyData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+            return String(data: prettyData, encoding: .utf8)
+        } catch {
+            self.logger.error("Failed to serialize data into JSON: \(error.localizedDescription)")
+            return String(data: data, encoding: .utf8)
+        }
     }
 }
-
