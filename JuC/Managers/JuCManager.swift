@@ -163,7 +163,8 @@ class JuCManager: ObservableObject {
 //                    print() error.identifiable
                     print(error)
                 } receiveValue: { response in
-                    self.messages.append(response)
+                   print(response)
+                    self.messages.append(response.messages.first!)
                 }
                 .store(in: &cancellables)
         }

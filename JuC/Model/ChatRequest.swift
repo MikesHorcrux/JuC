@@ -8,7 +8,7 @@
 import Foundation
 
 struct ChatRequest: Request {
-    typealias ReturnType = Message
+    typealias ReturnType = Conversation
     
     let method: HTTPMethod = .post
     let conversation: Conversation

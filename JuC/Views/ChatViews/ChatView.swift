@@ -23,9 +23,9 @@ struct ChatView: View {
                                     HStack {
                                         if message.role == "user"{
                                             Spacer()
-                                            UserChatBubble(msg: message.content!)
+                                            UserChatBubble(msg: message.content)
                                         } else {
-                                            JuCChatBubble(msg: message.content ?? "")
+                                            JuCChatBubble(msg: message.content)
                                             Spacer()
                                         }
                                     }
