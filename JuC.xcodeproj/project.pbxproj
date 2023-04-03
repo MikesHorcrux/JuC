@@ -18,6 +18,9 @@
 		5529A70D29DA52CB00E9044D /* Dictionary+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A70C29DA52CB00E9044D /* Dictionary+extension.swift */; };
 		5529A70F29DA531800E9044D /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5529A70E29DA531800E9044D /* Secrets.plist */; };
 		5529A71129DA538700E9044D /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A71029DA538700E9044D /* Env.swift */; };
+		5529A71429DA5B2E00E9044D /* ChatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A71329DA5B2E00E9044D /* ChatRequest.swift */; };
+		5529A71629DA5B6600E9044D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A71529DA5B6600E9044D /* Message.swift */; };
+		5529A71829DA5BF300E9044D /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A71729DA5BF300E9044D /* Conversation.swift */; };
 		558D329829C29F7F00075D41 /* view+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329729C29F7F00075D41 /* view+Extention.swift */; };
 		558D32A029C2F0D200075D41 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 558D329F29C2F0D200075D41 /* FirebaseAuth */; };
 		558D32A229C2F4DC00075D41 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32A129C2F4DC00075D41 /* AuthManager.swift */; };
@@ -71,6 +74,9 @@
 		5529A70C29DA52CB00E9044D /* Dictionary+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+extension.swift"; sourceTree = "<group>"; };
 		5529A70E29DA531800E9044D /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		5529A71029DA538700E9044D /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		5529A71329DA5B2E00E9044D /* ChatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequest.swift; sourceTree = "<group>"; };
+		5529A71529DA5B6600E9044D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		5529A71729DA5BF300E9044D /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		558D329729C29F7F00075D41 /* view+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "view+Extention.swift"; sourceTree = "<group>"; };
 		558D32A129C2F4DC00075D41 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		558D32A329C2F56400075D41 /* string+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "string+Extention.swift"; sourceTree = "<group>"; };
@@ -193,6 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				558E127D29CFF0D8004CCF71 /* question.swift */,
+				5529A71329DA5B2E00E9044D /* ChatRequest.swift */,
+				5529A71529DA5B6600E9044D /* Message.swift */,
+				5529A71729DA5BF300E9044D /* Conversation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -410,11 +419,13 @@
 				5529A6FD29DA50EE00E9044D /* APIClient.swift in Sources */,
 				558D32D229C7A5A600075D41 /* UserLabel.swift in Sources */,
 				55BD9CCC29C0385000B065C3 /* BottomSheet.swift in Sources */,
+				5529A71629DA5B6600E9044D /* Message.swift in Sources */,
 				558E127E29CFF0D8004CCF71 /* question.swift in Sources */,
 				558D32B829C675B700075D41 /* BottomSheetWithDismissView.swift in Sources */,
 				558D32A229C2F4DC00075D41 /* AuthManager.swift in Sources */,
 				558D329829C29F7F00075D41 /* view+Extention.swift in Sources */,
 				5529A70B29DA527600E9044D /* URLRequest+extension.swift in Sources */,
+				5529A71829DA5BF300E9044D /* Conversation.swift in Sources */,
 				558D32C429C69E4500075D41 /* SceneDelegate.swift in Sources */,
 				55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */,
 				55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */,
@@ -429,6 +440,7 @@
 				558D32BB29C685B800075D41 /* EmailSignUpView.swift in Sources */,
 				5529A71129DA538700E9044D /* Env.swift in Sources */,
 				55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */,
+				5529A71429DA5B2E00E9044D /* ChatRequest.swift in Sources */,
 				558D32BD29C6886300075D41 /* SignInView.swift in Sources */,
 				55CACC5929AC39F2000027FC /* JuCManager.swift in Sources */,
 				558D32A929C3E53A00075D41 /* AuthView.swift in Sources */,
