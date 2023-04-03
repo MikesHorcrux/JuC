@@ -56,7 +56,6 @@
 		55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC3B29AAAAE8000027FC /* ContentView.swift */; };
 		55CACC3E29AAAAE9000027FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CACC3D29AAAAE9000027FC /* Assets.xcassets */; };
 		55CACC4229AAAAE9000027FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55CACC4129AAAAE9000027FC /* Preview Assets.xcassets */; };
-		55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5329ABF4B5000027FC /* OpenAiManager.swift */; };
 		55CACC5729AC3849000027FC /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = 55CACC5629AC3849000027FC /* AsyncHTTPClient */; };
 		55CACC5929AC39F2000027FC /* JuCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5829AC39F2000027FC /* JuCManager.swift */; };
 		55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5A29AC3A4F000027FC /* ChatView.swift */; };
@@ -111,7 +110,6 @@
 		55CACC3D29AAAAE9000027FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55CACC3F29AAAAE9000027FC /* JuC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JuC.entitlements; sourceTree = "<group>"; };
 		55CACC4129AAAAE9000027FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		55CACC5329ABF4B5000027FC /* OpenAiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAiManager.swift; sourceTree = "<group>"; };
 		55CACC5829AC39F2000027FC /* JuCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuCManager.swift; sourceTree = "<group>"; };
 		55CACC5A29AC3A4F000027FC /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -318,7 +316,6 @@
 			isa = PBXGroup;
 			children = (
 				55CACC5829AC39F2000027FC /* JuCManager.swift */,
-				55CACC5329ABF4B5000027FC /* OpenAiManager.swift */,
 				558D32A129C2F4DC00075D41 /* AuthManager.swift */,
 			);
 			path = Managers;
@@ -451,7 +448,6 @@
 				558E128029D0B1CE004CCF71 /* QuestionsViewModel.swift in Sources */,
 				558D32D429C7AE3E00075D41 /* AccountView.swift in Sources */,
 				5529A70329DA515100E9044D /* Request.swift in Sources */,
-				55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */,
 				558E127829CFD541004CCF71 /* QuestionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
