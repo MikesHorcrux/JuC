@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5529A6FD29DA50EE00E9044D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A6FC29DA50EE00E9044D /* APIClient.swift */; };
+		5529A6FF29DA511700E9044D /* NetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A6FE29DA511700E9044D /* NetworkDispatcher.swift */; };
+		5529A70129DA513800E9044D /* NetworkRequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A70029DA513800E9044D /* NetworkRequestError.swift */; };
+		5529A70329DA515100E9044D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A70229DA515100E9044D /* Request.swift */; };
+		5529A70529DA516B00E9044D /* RequestPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A70429DA516B00E9044D /* RequestPublisher.swift */; };
+		5529A70729DA518500E9044D /* NetworkingLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A70629DA518500E9044D /* NetworkingLogger.swift */; };
+		5529A70929DA51F800E9044D /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A70829DA51F800E9044D /* JSONManager.swift */; };
+		5529A70B29DA527600E9044D /* URLRequest+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A70A29DA527600E9044D /* URLRequest+extension.swift */; };
+		5529A70D29DA52CB00E9044D /* Dictionary+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A70C29DA52CB00E9044D /* Dictionary+extension.swift */; };
+		5529A70F29DA531800E9044D /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5529A70E29DA531800E9044D /* Secrets.plist */; };
+		5529A71129DA538700E9044D /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5529A71029DA538700E9044D /* Env.swift */; };
 		558D329829C29F7F00075D41 /* view+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D329729C29F7F00075D41 /* view+Extention.swift */; };
 		558D32A029C2F0D200075D41 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 558D329F29C2F0D200075D41 /* FirebaseAuth */; };
 		558D32A229C2F4DC00075D41 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D32A129C2F4DC00075D41 /* AuthManager.swift */; };
@@ -49,6 +60,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5529A6FC29DA50EE00E9044D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		5529A6FE29DA511700E9044D /* NetworkDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcher.swift; sourceTree = "<group>"; };
+		5529A70029DA513800E9044D /* NetworkRequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestError.swift; sourceTree = "<group>"; };
+		5529A70229DA515100E9044D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		5529A70429DA516B00E9044D /* RequestPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPublisher.swift; sourceTree = "<group>"; };
+		5529A70629DA518500E9044D /* NetworkingLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingLogger.swift; sourceTree = "<group>"; };
+		5529A70829DA51F800E9044D /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
+		5529A70A29DA527600E9044D /* URLRequest+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+extension.swift"; sourceTree = "<group>"; };
+		5529A70C29DA52CB00E9044D /* Dictionary+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+extension.swift"; sourceTree = "<group>"; };
+		5529A70E29DA531800E9044D /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		5529A71029DA538700E9044D /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		558D329729C29F7F00075D41 /* view+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "view+Extention.swift"; sourceTree = "<group>"; };
 		558D32A129C2F4DC00075D41 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		558D32A329C2F56400075D41 /* string+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "string+Extention.swift"; sourceTree = "<group>"; };
@@ -103,9 +125,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5529A6FB29DA50B200E9044D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5529A6FC29DA50EE00E9044D /* APIClient.swift */,
+				5529A6FE29DA511700E9044D /* NetworkDispatcher.swift */,
+				5529A70029DA513800E9044D /* NetworkRequestError.swift */,
+				5529A70229DA515100E9044D /* Request.swift */,
+				5529A70429DA516B00E9044D /* RequestPublisher.swift */,
+				5529A70629DA518500E9044D /* NetworkingLogger.swift */,
+				5529A70829DA51F800E9044D /* JSONManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		558D329629C29F6900075D41 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				5529A70C29DA52CB00E9044D /* Dictionary+extension.swift */,
+				5529A70A29DA527600E9044D /* URLRequest+extension.swift */,
 				558D329729C29F7F00075D41 /* view+Extention.swift */,
 				558D32A329C2F56400075D41 /* string+Extention.swift */,
 			);
@@ -240,12 +278,15 @@
 		55CACC3829AAAAE8000027FC /* JuC */ = {
 			isa = PBXGroup;
 			children = (
+				55CACC3F29AAAAE9000027FC /* JuC.entitlements */,
 				558D32CD29C79D0200075D41 /* robot-arm-bionic-prosthesis-connection-communication-SBV-332135206-HD.mov */,
+				55CACC3D29AAAAE9000027FC /* Assets.xcassets */,
+				5529A70E29DA531800E9044D /* Secrets.plist */,
 				558D32A529C2FA7400075D41 /* GoogleService-Info.plist */,
+				5529A71029DA538700E9044D /* Env.swift */,
 				558D32C329C69E4500075D41 /* SceneDelegate.swift */,
 				55CACC3929AAAAE8000027FC /* JuCApp.swift */,
-				55CACC3D29AAAAE9000027FC /* Assets.xcassets */,
-				55CACC3F29AAAAE9000027FC /* JuC.entitlements */,
+				5529A6FB29DA50B200E9044D /* Networking */,
 				558E127C29CFF0C4004CCF71 /* Model */,
 				558D329629C29F6900075D41 /* Extentions */,
 				55BD9CBB29BEA12E00B065C3 /* ViewModels */,
@@ -345,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CACC4229AAAAE9000027FC /* Preview Assets.xcassets in Resources */,
+				5529A70F29DA531800E9044D /* Secrets.plist in Resources */,
 				558D32CE29C79D0200075D41 /* robot-arm-bionic-prosthesis-connection-communication-SBV-332135206-HD.mov in Resources */,
 				55CACC3E29AAAAE9000027FC /* Assets.xcassets in Resources */,
 				558D32A629C2FA7400075D41 /* GoogleService-Info.plist in Resources */,
@@ -359,14 +401,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				55CACC3C29AAAAE8000027FC /* ContentView.swift in Sources */,
+				5529A70129DA513800E9044D /* NetworkRequestError.swift in Sources */,
 				558D32D029C7A3D600075D41 /* MainView.swift in Sources */,
+				5529A70D29DA52CB00E9044D /* Dictionary+extension.swift in Sources */,
 				55BD9CC229BEA65500B065C3 /* ChatBubleShape.swift in Sources */,
+				5529A70729DA518500E9044D /* NetworkingLogger.swift in Sources */,
+				5529A6FF29DA511700E9044D /* NetworkDispatcher.swift in Sources */,
+				5529A6FD29DA50EE00E9044D /* APIClient.swift in Sources */,
 				558D32D229C7A5A600075D41 /* UserLabel.swift in Sources */,
 				55BD9CCC29C0385000B065C3 /* BottomSheet.swift in Sources */,
 				558E127E29CFF0D8004CCF71 /* question.swift in Sources */,
 				558D32B829C675B700075D41 /* BottomSheetWithDismissView.swift in Sources */,
 				558D32A229C2F4DC00075D41 /* AuthManager.swift in Sources */,
 				558D329829C29F7F00075D41 /* view+Extention.swift in Sources */,
+				5529A70B29DA527600E9044D /* URLRequest+extension.swift in Sources */,
 				558D32C429C69E4500075D41 /* SceneDelegate.swift in Sources */,
 				55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */,
 				55BD9CBF29BEA43200B065C3 /* ChatBubble.swift in Sources */,
@@ -375,18 +423,22 @@
 				558D32AB29C3F76100075D41 /* CircularBottomSheet.swift in Sources */,
 				558D32B029C667CF00075D41 /* RoundedCornerButtonStyle.swift in Sources */,
 				55CACC3A29AAAAE8000027FC /* JuCApp.swift in Sources */,
+				5529A70929DA51F800E9044D /* JSONManager.swift in Sources */,
 				55BD9CC629BEA81900B065C3 /* JuCChatBubble.swift in Sources */,
 				558D32B229C66FDE00075D41 /* RepeatableVideoView.swift in Sources */,
 				558D32BB29C685B800075D41 /* EmailSignUpView.swift in Sources */,
+				5529A71129DA538700E9044D /* Env.swift in Sources */,
 				55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */,
 				558D32BD29C6886300075D41 /* SignInView.swift in Sources */,
 				55CACC5929AC39F2000027FC /* JuCManager.swift in Sources */,
 				558D32A929C3E53A00075D41 /* AuthView.swift in Sources */,
 				558D32A429C2F56400075D41 /* string+Extention.swift in Sources */,
+				5529A70529DA516B00E9044D /* RequestPublisher.swift in Sources */,
 				55BD9CCA29C02A5900B065C3 /* TextEntryView.swift in Sources */,
 				558E127B29CFD5C8004CCF71 /* QuestionView.swift in Sources */,
 				558E128029D0B1CE004CCF71 /* QuestionsViewModel.swift in Sources */,
 				558D32D429C7AE3E00075D41 /* AccountView.swift in Sources */,
+				5529A70329DA515100E9044D /* Request.swift in Sources */,
 				55CACC5429ABF4B5000027FC /* OpenAiManager.swift in Sources */,
 				558E127829CFD541004CCF71 /* QuestionsView.swift in Sources */,
 			);
