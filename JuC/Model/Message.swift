@@ -8,6 +8,9 @@
 import Foundation
 
 struct Message: Codable {
-    var role: String
-    var content: String
+    
+    var content: String?
+    var role: String?
 }
+
+extension Message: Equatable { }

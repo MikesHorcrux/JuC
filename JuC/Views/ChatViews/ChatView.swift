@@ -21,15 +21,12 @@ struct ChatView: View {
                             VStack(spacing: 20) {
                                 ForEach(Array(jucManager.messages.enumerated()), id: \.offset) { index, message in
                                     HStack {
-                                        switch message {
-                                        case .user(let content):
+                                        if message.role == "user"{
                                             Spacer()
-                                            UserChatBubble(msg: content)
-                                        case .assistant(let content):
-                                            JuCChatBubble(msg: content)
+                                            UserChatBubble(msg: message.content!)
+                                        } else {
+                                            JuCChatBubble(msg: message.content ?? "")
                                             Spacer()
-                                        default:
-                                            EmptyView()
                                         }
                                     }
                                 }
@@ -50,8 +47,10 @@ struct ChatView: View {
     }
 }
 
+#if DEBUG
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(jucManager: JuCManager())
+        ChatView(jucManager: JuCManager(client: InMemoryAPIClient()))
     }
 }
+#endif

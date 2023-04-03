@@ -12,7 +12,7 @@ import OpenAIKit
 struct ContentView: View {
     @State var showTextfield: Bool = true
     @State var chatSheetPosition: SheetPositionWithDismiss = .maximized
-    @StateObject var jucManager = JuCManager()
+    @StateObject var jucManager = JuCManager(client: DefaultAPIClient.shared)
     
     var body: some View {
         ZStack {

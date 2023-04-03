@@ -28,10 +28,10 @@ struct TextEntryView: View {
                 Spacer()
                 Button {
                     Task {
-                        jucManager.messages.append(Chat.Message.user(content: textEntry))
+                        jucManager.messages.append(Message(content: textEntry, role: "user"))
                         textEntry = ""
                         dismissKeyboard(true)
-                        await jucManager.sendMessage()
+                        jucManager.sendConverstation()
                     }
                 } label: {
                     Image(systemName: "arrow.up")
@@ -52,11 +52,13 @@ struct TextEntryView: View {
     }
 }
 
+#if DEBUG
 struct TextEntryView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             Spacer()
-            TextEntryView(jucManager: JuCManager())
+            TextEntryView(jucManager: JuCManager(client: InMemoryAPIClient()))
         }
     }
 }
+#endif

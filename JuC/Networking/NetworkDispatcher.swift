@@ -38,7 +38,7 @@ struct NetworkDispatcher {
                 return data
             }
             // Decode data using our ReturnType
-            .decode(type: ReturnType.self, decoder: JSON.decoder)
+            .decode(type: ReturnType.self, decoder: JSONDecoder())
             // Handle any decoding errors
             .mapError { error in
                 handleError(error)
