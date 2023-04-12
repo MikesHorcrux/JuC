@@ -10,7 +10,7 @@ import FirebaseAuth
 
 @MainActor
 class JuCManager: ObservableObject {
-    @Published var messages: [Message] = [Message(content: "testing", role: "user")]
+    @Published var messages: [Message] = []
     let client: APIClient
     private var cancellables = [AnyCancellable]()
     private var user: User?
@@ -30,10 +30,7 @@ class JuCManager: ObservableObject {
             if let error = error {
                 print("Error fetching user token: \(error.localizedDescription)")
             } else if let token = token {
-                print("User token: \(token)")
-                // You can now use the token as needed
                 self.client.assign(accessToken: token)
-                print(self.client.accessToken)
             }
         })
     }
@@ -44,7 +41,6 @@ class JuCManager: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 guard case .failure(let error) = completion else { return }
-                // Print identifiable error
                 print(error)
             } receiveValue: { response in
                 print(response)
