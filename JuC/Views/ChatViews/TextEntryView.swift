@@ -31,7 +31,7 @@ struct TextEntryView: View {
                         jucManager.messages.append(Message(content: textEntry, role: "user"))
                         textEntry = ""
                         dismissKeyboard(true)
-                        jucManager.sendConverstation()
+                        jucManager.sendConversation()
                     }
                 } label: {
                     Image(systemName: "arrow.up")

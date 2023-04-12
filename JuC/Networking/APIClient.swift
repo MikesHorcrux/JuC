@@ -37,7 +37,7 @@ final class DefaultAPIClient: APIClient {
     }
 
     func assign(accessToken: String) {
-        headers["Authorization"] = "Token \(accessToken)"
+        headers["Authorization"] = "Bearer \(accessToken)"
     }
 
     /// Dispatches a Request and returns a publisher
