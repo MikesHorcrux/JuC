@@ -59,6 +59,7 @@
 		55CACC5729AC3849000027FC /* AsyncHTTPClient in Frameworks */ = {isa = PBXBuildFile; productRef = 55CACC5629AC3849000027FC /* AsyncHTTPClient */; };
 		55CACC5929AC39F2000027FC /* JuCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5829AC39F2000027FC /* JuCManager.swift */; };
 		55CACC5B29AC3A4F000027FC /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CACC5A29AC3A4F000027FC /* ChatView.swift */; };
+		55D760B729EA95FA00B8BA77 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D760B629EA95FA00B8BA77 /* KeyboardState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		55CACC4129AAAAE9000027FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55CACC5829AC39F2000027FC /* JuCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuCManager.swift; sourceTree = "<group>"; };
 		55CACC5A29AC3A4F000027FC /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		55D760B629EA95FA00B8BA77 /* KeyboardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 			children = (
 				55CACC5829AC39F2000027FC /* JuCManager.swift */,
 				558D32A129C2F4DC00075D41 /* AuthManager.swift */,
+				55D760B629EA95FA00B8BA77 /* KeyboardState.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				558D32A229C2F4DC00075D41 /* AuthManager.swift in Sources */,
 				558D329829C29F7F00075D41 /* view+Extention.swift in Sources */,
 				5529A70B29DA527600E9044D /* URLRequest+extension.swift in Sources */,
+				55D760B729EA95FA00B8BA77 /* KeyboardState.swift in Sources */,
 				5529A71829DA5BF300E9044D /* Conversation.swift in Sources */,
 				558D32C429C69E4500075D41 /* SceneDelegate.swift in Sources */,
 				55BD9CC429BEA6D000B065C3 /* UserChatBubble.swift in Sources */,
@@ -597,10 +601,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.justbearded.JuC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -637,10 +643,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.justbearded.JuC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

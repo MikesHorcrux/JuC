@@ -13,6 +13,7 @@ import KeyboardObserving
 struct JuCApp: App {
     
     @StateObject private var authManager = AuthenticationManager.shared
+    @StateObject private var keyboardState = KeyboardState()
     
     init() {
         FirebaseApp.configure()
@@ -28,7 +29,7 @@ struct JuCApp: App {
             } else {
                 ContentView()
                     .environmentObject(authManager)
-                    .environmentObject(Keyboard()) // Add the Keyboard environment object here.
+                    .environmentObject(keyboardState)
             }
         }
     }

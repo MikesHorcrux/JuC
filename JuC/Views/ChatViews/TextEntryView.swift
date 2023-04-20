@@ -9,40 +9,59 @@ import SwiftUI
 import OpenAIKit
 
 struct TextEntryView: View {
+    @EnvironmentObject var keyboardState: KeyboardState
     @ObservedObject var jucManager: JuCManager
     @State var textEntry: String = ""
     
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
-                TextField("Hey JuC...", text: $textEntry, axis: .vertical)
+                TextField("Hey JuC...", text: $textEntry, prompt: Text("Hey JuC..."), axis: .vertical)
                     .textFieldStyle(PlainTextFieldStyle())
                     .foregroundColor(.white)
                     .padding(5)
                     .background(Color("OxfordBlue"))
                     .cornerRadius(20)
-                    .padding(.trailing, 100)
+                    .padding(.trailing, 80)
                     .padding(30)
             }
             HStack {
                 Spacer()
-                Button {
-                    Task {
-                        jucManager.messages.append(Message(content: textEntry, role: "user"))
-                        textEntry = ""
-                        dismissKeyboard(true)
-                        jucManager.sendConversation()
+                HStack {
+                    if keyboardState.isKeyboardVisible {
+                        Button {
+                            hideKeyboard()
+                        } label: {
+                            Image(systemName: "keyboard.chevron.compact.down.fill")
+                                .fontWeight(.semibold)
+                                .font(.body)
+                                .foregroundColor(Color("SilverLakeBlue"))
+                                .padding(5)
+                                .background(Color("BottomSheet"))
+                                .clipShape(Circle())
+                               // .padding()
+                        }
                     }
-                } label: {
-                    Image(systemName: "arrow.up")
-                        .fontWeight(.semibold)
-                        .font(.title)
-                        .foregroundColor(Color("SilverLakeBlue"))
-                        .padding()
-                        .background(Color("BottomSheet"))
-                        .clipShape(Circle())
-                        .padding()
-            }
+                    
+                    Button {
+                        Task {
+                            jucManager.messages.append(Message(content: textEntry, role: "user"))
+                            textEntry = ""
+                            dismissKeyboard(true)
+                            jucManager.sendConversation()
+                        }
+                    } label: {
+                        Image(systemName: "arrow.up")
+                            .fontWeight(.semibold)
+                            .font(.body)
+                            .foregroundColor(Color("SilverLakeBlue"))
+                            .padding(5)
+                            .background(Color("BottomSheet"))
+                            .clipShape(Circle())
+                            //.padding()
+                    }
+                }
+                .padding([.trailing, .bottom],30)
             }
         }
         .padding(.bottom, 50)
@@ -59,6 +78,15 @@ struct TextEntryView_Previews: PreviewProvider {
             Spacer()
             TextEntryView(jucManager: JuCManager(client: InMemoryAPIClient()))
         }
+    }
+}
+#endif
+
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 #endif
