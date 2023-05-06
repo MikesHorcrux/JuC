@@ -49,7 +49,7 @@ struct BottomSheetView<Content: View>: View {
                 sheetPosition = .middle
             }
 #if !os(macOS)
-            dismissKeyboard(true)
+            dismissKeyboard()
             #endif
         }
     }
@@ -81,7 +81,7 @@ struct BottomSheetView<Content: View>: View {
                     let minHeightThreshold = self.minHeight * 0.5
                     let midHeightThreshold = self.midHeight * 0.5
 #if !os(macOS)
-                    dismissKeyboard(true)
+                    dismissKeyboard()
                     #endif
                     if value.translation.height > 0 {
                         if abs(value.translation.height) > minHeightThreshold {

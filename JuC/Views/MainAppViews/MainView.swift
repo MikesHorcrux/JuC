@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @ObservedObject var jucManager: JuCManager
     @Binding var showTextfield: Bool
     @Binding var chatSheetPosition: SheetPositionWithDismiss
+    
     var body: some View {
         NavigationStack {
             ScrollView {
+                PromptsList(jucManager: jucManager)
                 HStack {
                     Text("Revolutionizing Professional Communication with AI Expertise")
                         .foregroundColor(Color("YinMinBlue"))
@@ -21,7 +25,7 @@ struct MainView: View {
                     Spacer()
                 }
                 .padding()
-                .padding(.vertical, 45)
+                .padding(.bottom, 20)
                 QuestionsView(showTextfield: $showTextfield, chatSheetPosition: $chatSheetPosition)
                 
                     .toolbar {
@@ -53,8 +57,10 @@ struct MainView: View {
     }
 }
 
+#if DEBUG
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(showTextfield: .constant(false), chatSheetPosition: .constant(.dissMissed))
+        MainView(jucManager: JuCManager(client: InMemoryAPIClient()), showTextfield: .constant(false), chatSheetPosition: .constant(.dissMissed))
     }
 }
+#endif

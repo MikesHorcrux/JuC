@@ -11,12 +11,11 @@ import OpenAIKit
 struct TextEntryView: View {
     @EnvironmentObject var keyboardState: KeyboardState
     @ObservedObject var jucManager: JuCManager
-    @State var textEntry: String = ""
     
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
-                TextField("Hey JuC...", text: $textEntry, prompt: Text("Hey JuC..."), axis: .vertical)
+                TextField("Hey JuC...", text: $jucManager.textEntry, prompt: Text("Hey JuC..."), axis: .vertical)
                     .textFieldStyle(PlainTextFieldStyle())
                     .foregroundColor(.white)
                     .padding(5)
@@ -30,7 +29,7 @@ struct TextEntryView: View {
                 HStack {
                     if keyboardState.isKeyboardVisible {
                         Button {
-                            hideKeyboard()
+                            dismissKeyboard()
                         } label: {
                             Image(systemName: "keyboard.chevron.compact.down.fill")
                                 .fontWeight(.semibold)
@@ -45,9 +44,9 @@ struct TextEntryView: View {
                     
                     Button {
                         Task {
-                            jucManager.messages.append(Message(content: textEntry, role: "user"))
-                            textEntry = ""
-                            dismissKeyboard(true)
+                            jucManager.messages.append(Message(content: jucManager.textEntry, role: "user"))
+                            jucManager.textEntry = ""
+                            dismissKeyboard()
                             jucManager.sendConversation()
                         }
                     } label: {
@@ -83,10 +82,3 @@ struct TextEntryView_Previews: PreviewProvider {
 #endif
 
 
-#if canImport(UIKit)
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-#endif

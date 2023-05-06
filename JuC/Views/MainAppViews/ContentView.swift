@@ -8,15 +8,16 @@
 import SwiftUI
 import Foundation
 import OpenAIKit
+import Firebase
 
 struct ContentView: View {
     @State var showTextfield: Bool = true
-    @State var chatSheetPosition: SheetPositionWithDismiss = .maximized
+    @State var chatSheetPosition: SheetPositionWithDismiss = .dissMissed
     @StateObject var jucManager = JuCManager(client: DefaultAPIClient.shared)
     
     var body: some View {
         ZStack {
-            MainView(showTextfield: $showTextfield, chatSheetPosition: $chatSheetPosition)
+            MainView(jucManager: jucManager, showTextfield: $showTextfield, chatSheetPosition: $chatSheetPosition)
             BottomSheetWithDismissView(sheetPosition: $chatSheetPosition, maxHeight: UIScreen.main.bounds.height - 140) {
                 ChatView(jucManager: jucManager)
             }
@@ -45,6 +46,13 @@ struct ContentView: View {
                     }
             }
         }
+        }
+        .onAppear {
+            // Log the ContentView screen view event to Google Analytics
+            Analytics.logEvent(AnalyticsEventScreenView, parameters: [
+                AnalyticsParameterScreenName: "ContentView",
+                AnalyticsParameterScreenClass: "ContentView"
+            ])
         }
     }
 }

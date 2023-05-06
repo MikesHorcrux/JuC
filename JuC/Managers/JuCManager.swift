@@ -11,6 +11,7 @@ import FirebaseAuth
 @MainActor
 class JuCManager: ObservableObject {
     @Published var messages: [Message] = []
+    @Published var textEntry: String = ""
     let client: APIClient
     private var cancellables = [AnyCancellable]()
     private var user: User?
