@@ -9,40 +9,58 @@ import SwiftUI
 import OpenAIKit
 
 struct TextEntryView: View {
+    @EnvironmentObject var keyboardState: KeyboardState
     @ObservedObject var jucManager: JuCManager
-    @State var textEntry: String = ""
     
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
-                TextField("Hey JuC...", text: $textEntry, axis: .vertical)
+                TextField("Hey JuC...", text: $jucManager.textEntry, prompt: Text("Hey JuC..."), axis: .vertical)
                     .textFieldStyle(PlainTextFieldStyle())
                     .foregroundColor(.white)
                     .padding(5)
                     .background(Color("OxfordBlue"))
                     .cornerRadius(20)
-                    .padding(.trailing, 100)
+                    .padding(.trailing, 80)
                     .padding(30)
             }
             HStack {
                 Spacer()
-                Button {
-                    Task {
-                        jucManager.messages.append(Chat.Message.user(content: textEntry))
-                        textEntry = ""
-                        dismissKeyboard(true)
-                        await jucManager.sendMessage()
+                HStack {
+                    if keyboardState.isKeyboardVisible {
+                        Button {
+                            dismissKeyboard()
+                        } label: {
+                            Image(systemName: "keyboard.chevron.compact.down.fill")
+                                .fontWeight(.semibold)
+                                .font(.body)
+                                .foregroundColor(Color("SilverLakeBlue"))
+                                .padding(5)
+                                .background(Color("BottomSheet"))
+                                .clipShape(Circle())
+                               // .padding()
+                        }
                     }
-                } label: {
-                    Image(systemName: "arrow.up")
-                        .fontWeight(.semibold)
-                        .font(.title)
-                        .foregroundColor(Color("SilverLakeBlue"))
-                        .padding()
-                        .background(Color("BottomSheet"))
-                        .clipShape(Circle())
-                        .padding()
-            }
+                    
+                    Button {
+                        Task {
+                            jucManager.messages.append(Message(content: jucManager.textEntry, role: "user"))
+                            jucManager.textEntry = ""
+                            dismissKeyboard()
+                            jucManager.sendConversation()
+                        }
+                    } label: {
+                        Image(systemName: "arrow.up")
+                            .fontWeight(.semibold)
+                            .font(.body)
+                            .foregroundColor(Color("SilverLakeBlue"))
+                            .padding(5)
+                            .background(Color("BottomSheet"))
+                            .clipShape(Circle())
+                            //.padding()
+                    }
+                }
+                .padding([.trailing, .bottom],30)
             }
         }
         .padding(.bottom, 50)
@@ -52,11 +70,15 @@ struct TextEntryView: View {
     }
 }
 
+#if DEBUG
 struct TextEntryView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             Spacer()
-            TextEntryView(jucManager: JuCManager())
+            TextEntryView(jucManager: JuCManager(client: InMemoryAPIClient()))
         }
     }
 }
+#endif
+
+
